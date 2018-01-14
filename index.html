@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>AR.js Demo for Script Conf</title>
+  <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/examples/vendor/aframe/build/aframe.min.js"></script>
+  <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.5.0/annyang.min.js"></script>
+  <script src="https://raw.githubusercontent.com/lmalave/aframe-speech-command-component/master/dist/aframe-speech-command-component.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+  <body style='margin : 0px; overflow: hidden;'>
+    <a-scene embedded arjs='trackingMethod: best;'>
+      <a-entity id="annyang" annyang-speech-recognition></a-entity>
+      <a-anchor hit-testing-enabled='true'>
+        <a-box speech-command__show="command: show; type: attribute; attribute: visible; value: true;"
+          speech-command__hide="command: hide; type: attribute; attribute: visible; value: false;" position='0 0.5 0' material='opacity: 0.5;'></a-box>
+        </a-anchor>
+      <a-camera-static/>
+    </a-scene>
+  </body>
+</html>
