@@ -10,11 +10,19 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
   <body style='margin : 0px; overflow: hidden;'>
+    <a-assets>
+      <a-asset-item id="elephant-obj" src="assets/elephant.obj"></a-asset-item>
+      <a-asset-item id="elephant-mtl" src="assets/elephant.mtl"></a-asset-item>
+    <a-assets>
     <a-scene embedded arjs='trackingMethod: best;'>
       <a-entity id="annyang" annyang-speech-recognition></a-entity>
-      <a-anchor hit-testing-enabled='true'>
-        <a-box speech-command__show="command: show; type: attribute; attribute: visible; value: true;"
-          speech-command__hide="command: hide; type: attribute; attribute: visible; value: false;" position='0 0.5 0' material='opacity: 0.5;'></a-box>
+        <a-anchor hit-testing-enabled='true'>
+          <a-entity
+            obj-model="obj: #elephant-obj; mtl: #elephant-mtl"
+            speech-command__show="command: show; type: attribute; attribute: visible; value: true;"
+            speech-command__hide="command: hide; type: attribute; attribute: visible; value: false;"
+            position='0 0.5 0'>
+          </a-entity>
         </a-anchor>
       <a-camera-static/>
     </a-scene>
