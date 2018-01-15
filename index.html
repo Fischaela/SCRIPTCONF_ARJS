@@ -24,7 +24,9 @@
             visibile="false"
             speech-command__show="command: show sun; type: attribute; attribute: visible; value: true;"
             speech-command__hide="command: hide sun; type: attribute; attribute: visible; value: false;"
-          ></a-entity>
+          >
+            <a-animation attribute="rotation" to="360 0 0" dur="5000" easing='linear' repeat="indefinite"></a-animation>
+          </a-entity>
         </a-box>
       </a-anchor>
       <a-camera-static/>
